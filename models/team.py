@@ -1,7 +1,8 @@
 class Team:
     
-    def __init__(self, name, stadium, points, id = None):
+    def __init__(self, name, stadium, wins, losses, id = None):
         self.name = name
         self.stadium = stadium
-        self.points = points
+        self.wins= wins
+        self.losses = losses
         self.id = id
