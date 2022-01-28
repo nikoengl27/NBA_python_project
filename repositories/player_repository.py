@@ -12,14 +12,14 @@ def save(player):
     player.id = id
     return player
 
-# def select_all():
-#     players = []
+def select_all():
+    players = []
 
-#     sql = "SELECT * FROM players"
-#     results = run_sql(sql)
+    sql = "SELECT * FROM players"
+    results = run_sql(sql)
 
-#     for row in results:
-#         team = team_repository.select(row['team_id'])
-#         player = Player(team, row['name'], row['position'], row['id'])
-#         players.append(player)
-#     return players
+    for row in results:
+        team = team_repository.select(row['team_id'])
+        player = Player(team, row['name'], row['position'], row['id'])
+        players.append(player)
+    return players

@@ -12,13 +12,13 @@ def save(team):
     team.id = id
     return team
 
-# def select_all():
-#     teams = []
+def select_all():
+    teams = []
 
-#     sql = "SELECT * FROM teams"
-#     results = run_sql(sql)
+    sql = "SELECT * FROM teams"
+    results = run_sql(sql)
 
-#     for row in results:
-#         team = Team(row['name'], row['stadium'], row['wins'], row['losses'], row['id'] )
-#         teams.append(team)
-#     return teams
+    for row in results:
+        team = Team(row['name'], row['stadium'], row['wins'], row['losses'], row['id'] )
+        teams.append(team)
+    return teams
