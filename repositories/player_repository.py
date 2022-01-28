@@ -1,3 +1,5 @@
+from cProfile import run
+from unittest import result
 from db.run_sql import run_sql
 from models.player import Player
 from models.team import Team
@@ -23,3 +25,28 @@ def select_all():
         player = Player(team, row['name'], row['position'], row['id'])
         players.append(player)
     return players
+
+def select(id):
+    player = None
+    sql = "SELECT * FROM players WHERE id = %s"
+    values = [id]
+    result =run_sql(sql, values)[0]
+
+    if result is not None:
+        team = team_repository.select(result['team_id'])
+        player = Player(team, result['name'], result['position'], result['id'])
+    return player
+
+def delete_all():
+    sql = "DELETE FROM players"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM player WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+def update(player):
+    sql = "UPDATE players SET (team_id, name, position) = (%s, %s, %s) WHERE id = %s"
+    values = [player.team.id, player.name, player.position, player.id]
+    run_sql(sql, values)
