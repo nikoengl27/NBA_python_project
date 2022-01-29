@@ -42,3 +42,15 @@ def update(team):
     sql = "UPDATE teams SET (name, stadium, wins, losses) = (%s, %s, %s, %s) WHERE id = %s"
     values = [team.name, team.stadium, team. wins, team.losses, team.id]
     run_sql(sql, values)
+
+def players(team):
+    players = []
+
+    sql = "SELECT * FROM players WHERE author_id = %s"
+    values = [team.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        player = Player(player.team.id, row['name'], row['postion'], row['id'] )
+        players.append(player)
+    return players
