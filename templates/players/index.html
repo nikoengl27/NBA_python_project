@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% for player in all_players %}
+  <div class="player">
+    <div class="content">
+      <a href="/players/{{player.id}}">{{player.name}}</a>
+      <div class="team">
+        {{player.team.name}}
+        <div 
+            class="position">{{player.position}}
+        </div>
+      </div>
+      <div class="buttons">
+
+        <form class="delete-form" action="/players/{{player.id}}/delete" method="POST">
+          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}

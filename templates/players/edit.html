@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<from action="/players/{{player.id}}" method="post">
+    <div>
+        <label for="team">Team:</label>
+        <select id="team" name="team_id">
+            {% for team in all_teams %} 
+                <option value="{{team_id}}"
+                    {% if player.team.id == team.id %} selected="selected" {% endif %}>
+                    {{ team.name }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{player.name}}" required autofocus>
+    </div>
+    <div>
+        <label for ="position">Position:</label>
+        <input type="text" id="position" name="position" value="{{player.position}}" required autofocus>  
+    </div>
+
+    <button type="submit">Update Player</button>
+
+
+</from>
+
+
+{% endblock %}
