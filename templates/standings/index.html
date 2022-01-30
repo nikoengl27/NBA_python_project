@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block home %}
+
+{% for team in all_teams %} 
+    <div class="team_standings">
+        <div class="content">
+            {{ team.name }} : {{ team.wins }} - {{ team.losses }} 
+        </div>
+    </div>
+
+{% endfor %}
+
+
+{% endblock %} 

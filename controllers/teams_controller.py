@@ -41,7 +41,7 @@ def create_team():
 @teams_blueprint.route("/teams/<id>/edit", methods = ['GET'])
 def edit_team(id):
     team = team_repository.select(id)
-    return render_template('/teams/edit.html', team = team)
+    return render_template('teams/edit.html', team = team)
 
 #update team
 @teams_blueprint.route("/teams/<id>", methods = ['POST'])
@@ -59,3 +59,5 @@ def update_team(id):
 def delete_team(id):
     team_repository.delete(id)
     return redirect('/teams')
+
+

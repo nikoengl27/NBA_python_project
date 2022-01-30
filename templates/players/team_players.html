@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for player in players %}
+    <div class="team_players">
+        {{player.name}} {{player.position}}
+    </div>
+{% endfor %}
+
+{% endblock %}

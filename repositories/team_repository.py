@@ -46,11 +46,11 @@ def update(team):
 def players(team):
     players = []
 
-    sql = "SELECT * FROM players WHERE author_id = %s"
-    values = [team.id]
+    sql = "SELECT * FROM players WHERE team_id = %s"
+    values = [team]
     results = run_sql(sql, values)
 
     for row in results:
-        player = Player(player.team.id, row['name'], row['postion'], row['id'] )
+        player = Player(row['team_id'], row['name'], row['position'], row['id'] )
         players.append(player)
     return players

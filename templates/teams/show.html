@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="stadium">
+    Stadium: {{ team.stadium }}
+</div>
+<div class="score">
+    Total: {{ team.wins }} wins - {{ team.losses }} losses
+</div>
+<div class="players">
+    <a href="/players/team/{{team.id}}">Players</a>
+</div>
+<div class="buttons">
+    <form class="delete-form" action="/teams/{{team.id}}/delete" method="POST">
+        <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);" aria-hidden="true"></i></button>
+    </form>
+    <p>
+        <a href="/teams/{{team.id}}/edit">Edit</a>
+    </p>
+</div>
+
+{% endblock %}

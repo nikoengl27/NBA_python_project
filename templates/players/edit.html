@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<from action="/players/{{player.id}}" method="post">
+<form action="/players/{{player.id}}" method="post">
     <div>
         <label for="team">Team:</label>
         <select id="team" name="team_id">
@@ -25,7 +25,7 @@
     <button type="submit">Update Player</button>
 
 
-</from>
+</form>
 
 
 {% endblock %}

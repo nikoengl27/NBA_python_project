@@ -4,9 +4,21 @@
     <div>
         <p>{{player.name}}</p>
         <hr>
-        <p>{{player.team.name}}</p>
-        <p>{{player.position}}</p>
-        <p><a href="/players/{{player.id}}/edit">Edit</a></p>
+        <div class="team">
+            Team: {{player.team.name}}
+            <div 
+                class="position">
+            Position: {{player.position}}
+            </div>
+        </div>
+        <div class="buttons">
+            <form class="delete-form" action="/players/{{player.id}}/delete" method="POST">
+              <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+            </form>
+            <p>
+                <a href="/players/{{player.id}}/edit">Edit</a>
+            </p>
+        </div>
     </div>
 
 {% endblock %}

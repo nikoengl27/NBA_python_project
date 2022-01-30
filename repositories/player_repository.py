@@ -1,4 +1,3 @@
-from cProfile import run
 from unittest import result
 from db.run_sql import run_sql
 from models.player import Player
@@ -42,7 +41,7 @@ def delete_all():
     run_sql(sql)
 
 def delete(id):
-    sql = "DELETE FROM player WHERE id = %s"
+    sql = "DELETE FROM players WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 

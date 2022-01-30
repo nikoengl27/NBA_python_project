@@ -58,3 +58,10 @@ def update_player(id):
 def delete_player(id):
     player_repository.delete(id)
     return redirect('/players')
+
+#show players of a team
+@players_blueprint.route("/players/team/<id>", methods = ['GET'])
+def show_player_of_team(id):
+    players = team_repository.players(id)
+    return render_template('/players/team_players.html', players = players)
+
