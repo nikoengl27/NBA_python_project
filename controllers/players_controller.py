@@ -30,7 +30,7 @@ def new_player():
 def create_player():
     team = team_repository.select(request.form['team_id'])
     name = request.form['name']
-    position = request.form['postition']
+    position = request.form['position']
     player = Player(team, name, position)
     player_repository.save(player)
     return redirect('/players')
