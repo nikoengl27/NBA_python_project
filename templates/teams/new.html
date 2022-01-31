@@ -2,9 +2,8 @@
 {% block content %}
 
 <link rel="stylesheet" href="/static/style.css">
-
+<div class="new_team">
 <form action="/teams" method="post">
-
     <div>
         <label for="name">Name:</label>
         <input type="text" id="title" name="name" placeholder="Name" required autofocus>
@@ -23,9 +22,7 @@
     </div>
 
     <button type="submit">Add New Team</button>
-
-
 </form>
-
+</div>
 
 {% endblock %}

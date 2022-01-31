@@ -2,7 +2,12 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
+<div class="update_player">
 <form action="/players/{{player.id}}" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{player.name}}" required autofocus>
+    </div>
     <div>
         <label for="team">Team:</label>
         <select id="team" name="team_id">
@@ -15,18 +20,13 @@
         </select>
     </div>
     <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="{{player.name}}" required autofocus>
-    </div>
-    <div>
         <label for ="position">Position:</label>
         <input type="text" id="position" name="position" value="{{player.position}}" required autofocus>  
     </div>
 
     <button type="submit">Update Player</button>
-
-
 </form>
+</div>
 
 
 {% endblock %}

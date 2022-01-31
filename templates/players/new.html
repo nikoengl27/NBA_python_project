@@ -2,8 +2,8 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
+<div class="add_player">
 <form action="/players" method="post">
-
     <div>
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Name" required autofocus>
@@ -20,11 +20,9 @@
         <label for="position">Position:</label>
         <input type="text" id="position" name="position" placeholder="Position" required autofocus>
     </div>
-
     <button type="submit">Add Player</button>
-
 </form>
-
+</div>
 
 
 {% endblock %}

@@ -2,24 +2,20 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-    <div>
-        <p>{{player.name}}</p>
-        <hr>
-        <div class="team">
-            Team: {{player.team.name}}
-            <div 
-                class="position">
-            Position: {{player.position}}
-            </div>
-        </div>
-        <div class="buttons">
-            <p>
-                <a href="/players/{{player.id}}/edit">Edit</a>
-            </p>
-            <p>
-                <a href="/players/{{player.id}}/delete">Remove Player</a>
-            </p>
-        </div>
-    </div>
+<div class="player_details">
+    <ul>{{player.name}}</ul>
+    <p>
+        <ul>Team: {{player.team.name}}</ul>
+        <ul>Position: {{player.position}}</ul>
+    </p>
+</div>
+<div class="player_buttons">
+    <p>
+        <a href="/players/{{player.id}}/edit">Edit Player</a>
+    </p>
+    <p>
+        <a href="/players/{{player.id}}/delete">Remove Player</a>
+    </p>
+</div>
 
 {% endblock %}
