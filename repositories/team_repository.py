@@ -49,7 +49,7 @@ def players(team):
     players = []
 
     sql = "SELECT * FROM players WHERE team_id = %s"
-    values = [team]
+    values = [team.id]
     results = run_sql(sql, values)
 
     for row in results:

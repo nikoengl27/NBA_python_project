@@ -7,12 +7,12 @@
         </p>    
     </div>
 
-{% for player in all_players %}
-  <div class="player">
-    <div class="content">
-      <a href="/players/{{player.id}}">{{player.name}}</a>
+    <div id="grid_players">
+        {% for player in all_players %}
+        <div>
+        <a href="/players/{{player.id}}">{{player.name}}</a>
+        </div>
+        {% endfor %}
     </div>
-  </div>
-{% endfor %}
 
 {% endblock %}

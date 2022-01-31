@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <link rel="stylesheet" href="static/style.css"> -->
     <title>NBA Wiki Page</title>
 </head>
 <body>
+  <link rel="stylesheet" href="static/style.css">
     <header>
         <nav>
           <ul class="menu">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('teams.teams') }}">Teams</a></li>
-            <li><a href="{{ url_for('standings.standings') }}">Standings</a></li>
-            <li><a href="{{ url_for('players.players') }}">Players</a></li>
-            <li><a href="https://www2.nbastore.eu/en/?loc=en-GB?_s=bm-fi-NBA-prtsite-NBA-PS-1020US">NBA Store</a> </li>
-            <li><a href="https://watch.nba.com/packages?ls=nba:leaguepass:own:dig:intsites:topnav:eg:acq:sub:dtc-acq:skysports:UK:en:">NBA League Pass</a> </li>
+            <ul><a href="{{ url_for('home') }}">Home</a></ul>
+            <ul><a href="{{ url_for('teams.teams') }}">Teams</a></ul>
+            <ul><a href="{{ url_for('standings.standings') }}">Standings</a></ul>
+            <ul><a href="{{ url_for('players.players') }}">Players</a></ul>
+            <ul><a href="https://www2.nbastore.eu/en/?loc=en-GB?_s=bm-fi-NBA-prtsite-NBA-PS-1020US">NBA Store</a> </ul>
+            <ul><a href="https://watch.nba.com/packages?ls=nba:leaguepass:own:dig:intsites:topnav:eg:acq:sub:dtc-acq:skysports:UK:en:">NBA League Pass</a> </ul>
           </ul>
         </nav>
     </header>

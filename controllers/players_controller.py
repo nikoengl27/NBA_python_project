@@ -54,7 +54,7 @@ def update_player(id):
     return redirect('/players')
 
 #delete
-@players_blueprint.route("/players/<id>/delete", methods = ['POST'])
+@players_blueprint.route("/players/<id>/delete", methods = ['GET'])
 def delete_player(id):
     player_repository.delete(id)
     return redirect('/players')

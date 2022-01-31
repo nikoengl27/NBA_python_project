@@ -1,8 +1,83 @@
-/* body { 
-    background-image: url('/static/Basketball\ Court\ HD\ Wallpapers\ -\ 2022\ Basketball\ Wallpaper.jpeg'); 
-    background-position: center;
-    background-repeat: no-repeat;
+body { 
+    background: url('/static/teahub.io-hd-wallpapers-for-mac-48488.png') no-repeat center center fixed; 
     background-size: cover;
-    height: 100%;
+}
+
+header {
+    color: white;
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: fixed;
+    width: 75%;
+    top: 0;
+    left: 0px;
+    background-color: blue;
+}
+
+.match_info {
+  color: white;
+  padding-top: 10%;
+}
+
+.result_info {
+    color: white;
+    padding-top: 20px;
+    position: fixed;
+    right: 0cm;
+    top: 20%;
+
+}
+
+.top_plays {
+    color: white;
+    padding-top: 10%;
+}
+
+#grid_teams {
+    display: grid;
+    height: 200px;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 25px 60px;
+    padding-top: 20%;
+}
+  
+#grid_teams > div {
+    border: 1px solid blue;
+    background-color: blue;
+    text-align: center;
+}
+
+#grid_players {
+    display: grid;
+    height: 200px;
+    grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+    gap: 25px 60px;
+    padding-top: 20%;
+}
+  
+#grid_players > div {
+    text-align: center;
+}
+
+footer {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: fixed;
+    bottom: 0;
     width: 100%;
-} */
+    background-color: blue;
+}

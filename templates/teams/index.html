@@ -6,15 +6,12 @@
         <li><a href="{{ url_for('teams.new_team') }}">Add a Team</a></li>
     </p>    
 </div>
-
-{% for team in all_teams %} 
-    <div class="team">
-        <div class="content">
-            <a href="/teams/{{ team.id }}">{{ team.name }}</a> 
-            
-        </div>
+<div id="grid_teams">
+    {% for team in all_teams %}
+    <div>
+    <a href="/teams/{{ team.id }}">{{ team.name }}</a> 
     </div>
-
-{% endfor %}
+    {% endfor %}
+</div>
 
 {% endblock %}

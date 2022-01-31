@@ -1,21 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
+
 <div class="stadium">
     Stadium: {{ team.stadium }}
 </div>
 <div class="score">
     Total: {{ team.wins }} wins - {{ team.losses }} losses
 </div>
+<div class="starting_lineup">
+    <p>Starting Lineup:</p>
+    {% for player in players %} 
+        <li> {{player.name}} </li>
+    {% endfor %} 
+</div>
+
 <div class="players">
-    <a href="/players/team/{{team.id}}">Players</a>
+    <a href="/players/team/{{team.id}}">Roster</a>
 </div>
 <div class="buttons">
-    <form class="delete-form" action="/teams/{{team.id}}/delete" method="POST">
-        <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);" aria-hidden="true"></i></button>
-    </form>
     <p>
         <a href="/teams/{{team.id}}/edit">Edit</a>
+    </p>
+    <p>
+        <a href="/teams/{{team.id}}/delete">Remove Team</a>
     </p>
 </div>
 

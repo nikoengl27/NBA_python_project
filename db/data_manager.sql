@@ -13,5 +13,5 @@ CREATE TABLE players (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     position VARCHAR(255),
-    team_id INT REFERENCES teams(id)
+    team_id INT REFERENCES teams(id) ON DELETE CASCADE
 );
