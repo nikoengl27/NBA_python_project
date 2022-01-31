@@ -45,11 +45,11 @@ def edit_player(id):
 #update
 @players_blueprint.route("/players/<id>", methods = ['POST'])
 def update_player(id):
+    # pdb.set_trace()
     team = team_repository.select(request.form['team_id'])
     name = request.form['name']
     position = request.form['position']
     player = Player(team, name, position, id)
-    print(player.team.name())  #check here
     player_repository.update(player)
     return redirect('/players')
 

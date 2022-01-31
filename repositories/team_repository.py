@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.team import Team
 from models.player import Player
+import pdb
 
 
 
@@ -15,7 +16,7 @@ def save(team):
 def select_all():
     teams = []
 
-    sql = "SELECT * FROM teams"
+    sql = "SELECT * FROM teams ORDER by name ASC"
     results = run_sql(sql)
 
     for row in results:
@@ -28,6 +29,7 @@ def select(id):
     sql = "SELECT * FROM teams WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
+    # pdb.set_trace()
 
     if result is not None:
         team = Team(result['name'], result['stadium'], result['wins'], result['losses'], result['id'] )

@@ -3,6 +3,10 @@
 
 <form action="/teams/{{team.id}}" method="post">
     <div>
+        <labe for="name">Name:</labe>
+        <input type="text" id="name" name="name" value="{{team.name}}" required>
+    </div>
+    <div>
         <label for="stadium">Stadium:</label>
         <input type="text" id="stadium" name="stadium" value="{{team.stadium}}" required>
     </div>

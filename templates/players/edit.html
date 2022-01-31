@@ -6,7 +6,7 @@
         <label for="team">Team:</label>
         <select id="team" name="team_id">
             {% for team in all_teams %} 
-                <option value="{{team_id}}"
+                <option value="{{team.id}}"
                     {% if player.team.id == team.id %} selected="selected" {% endif %}>
                     {{ team.name }}
                 </option>
