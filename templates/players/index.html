@@ -1,11 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <div>
-        <p>
-            <li><a href="{{ url_for('players.new_player') }}">Add a Player</a></li>
-        </p>    
-    </div>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
     <div id="grid_players">
         {% for player in all_players %}
@@ -14,5 +9,5 @@
         </div>
         {% endfor %}
     </div>
-
+    
 {% endblock %}

@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 {% block home %}
 
-{% for team in all_teams %} 
-    <div class="team_standings">
-        <div class="content">
-            {{ team.name }} : {{ team.wins }} - {{ team.losses }} 
-        </div>
+<h2>Standings</h2>
+<div id="grid_standings">
+
+    {% for team in all_teams %}
+    
+    <div>
+      {{loop.index}} {{ team.name }} : {{ team.wins }} - {{ team.losses }} 
     </div>
 
-{% endfor %}
-
+    {% endfor %}
+</div>
 
 {% endblock %} 
