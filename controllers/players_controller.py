@@ -11,19 +11,19 @@ players_blueprint = Blueprint("players", __name__)
 @players_blueprint.route("/players")
 def players():
     players = player_repository.select_all()
-    return render_template("players/index.html", all_players = players)
+    return render_template("players/index.html", all_players = players, title = "NBA Player List")
 
 #show player
 @players_blueprint.route("/players/<id>", methods = ['GET'])
 def show_player(id):
     player = player_repository.select(id)
-    return render_template('players/show.html', player = player)
+    return render_template('players/show.html', player = player , title = player.name)
 
 #new 
 @players_blueprint.route("/players/new", methods=['GET'])
 def new_player():
     teams = team_repository.select_all()
-    return render_template("players/new.html", all_teams = teams)
+    return render_template("players/new.html", all_teams = teams, title = "Add new Player")
 
 #create
 @players_blueprint.route("/players", methods=['POST'])
@@ -40,7 +40,7 @@ def create_player():
 def edit_player(id):
     player = player_repository.select(id)
     teams = team_repository.select_all()
-    return render_template('players/edit.html', player = player, all_teams = teams)
+    return render_template('players/edit.html', player = player, all_teams = teams, title = "Player Edit Page")
 
 #update
 @players_blueprint.route("/players/<id>", methods = ['POST'])
@@ -63,5 +63,5 @@ def delete_player(id):
 @players_blueprint.route("/players/team/<id>", methods = ['GET'])
 def show_player_of_team(id):
     players = team_repository.players(id)
-    return render_template('/players/team_players.html', players = players)
+    return render_template('/players/team_players.html', players = players, title = "Full Roster")
 

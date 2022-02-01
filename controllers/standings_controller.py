@@ -12,7 +12,7 @@ standings_blueprint = Blueprint("standings", __name__)
 @standings_blueprint.route("/standings")
 def standings():
     teams = standings_repository.order_teams()
-    return render_template("standings/index.html", all_teams = teams)
+    return render_template("standings/index.html", all_teams = teams, title = "Standings")
 
 
 

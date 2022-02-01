@@ -12,20 +12,21 @@ teams_blueprint = Blueprint("teams", __name__)
 @teams_blueprint.route("/teams")
 def teams():
     teams = team_repository.select_all()
-    return render_template("teams/index.html", all_teams = teams)
+    return render_template("teams/index.html", all_teams = teams, title = "NBA Teams")
 
 #show team
 @teams_blueprint.route("/teams/<id>", methods = ['GET'])
 def show_team(id):
     team = team_repository.select(id)
     players = team_repository.players(id)
-    return render_template('teams/show.html', team = team, players = players)
+    return render_template('teams/show.html', team = team, players = players, title = team.name)
 
 #new team
 @teams_blueprint.route("/teams/new", methods = ['GET'])
 def new_team():
     teams = team_repository.select_all()
-    return render_template("teams/new.html", all_teams = teams)
+    return render_template("teams/new.html", all_teams = teams, title = "Add new Team")
+
 
 #create team
 @teams_blueprint.route("/teams", methods = ['POST'])
@@ -42,7 +43,7 @@ def create_team():
 @teams_blueprint.route("/teams/<id>/edit", methods = ['GET'])
 def edit_team(id):
     team = team_repository.select(id)
-    return render_template('teams/edit.html', team = team)
+    return render_template('teams/edit.html', team = team, title = "Team Edit Page")
 
 #update team
 @teams_blueprint.route("/teams/<id>/update", methods = ['POST'])
