@@ -18,7 +18,7 @@ def teams():
 @teams_blueprint.route("/teams/<id>", methods = ['GET'])
 def show_team(id):
     team = team_repository.select(id)
-    players = team_repository.players(team)
+    players = team_repository.players(id)
     return render_template('teams/show.html', team = team, players = players)
 
 #new team
@@ -45,13 +45,13 @@ def edit_team(id):
     return render_template('teams/edit.html', team = team)
 
 #update team
-@teams_blueprint.route("/teams/<id>", methods = ['POST'])
+@teams_blueprint.route("/teams/<id>/update", methods = ['POST'])
 def update_team(id):
     name = request.form['name']
     stadium = request.form['stadium']
     wins = request.form['wins']
     losses = request.form['losses']
-    team = Team(name, stadium, wins, losses)
+    team = Team(name, stadium, wins, losses, id)
     team_repository.update(team)
     return redirect('/teams')
 

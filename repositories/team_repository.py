@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.team import Team
 from models.player import Player
+from repositories import team_repository
 import pdb
 
 
@@ -45,14 +46,15 @@ def update(team):
     values = [team.name, team.stadium, team.wins, team.losses, team.id]
     run_sql(sql, values)
 
-def players(team):
+def players(id):
     players = []
 
     sql = "SELECT * FROM players WHERE team_id = %s"
-    values = [team.id]
+    values = [id]
     results = run_sql(sql, values)
 
     for row in results:
-        player = Player(row['team_id'], row['name'], row['position'], row['id'] )
+        team = team_repository.select(row['team_id'])
+        player = Player(team, row['name'], row['position'], row['id'] )
         players.append(player)
     return players

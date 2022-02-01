@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/static/style.css">
 
 <div class="team_logo">
-    <img src="/static/team_images/{{team.name}}.png" alt="hello">
+    <img src="/static/team_images/{{team.name}}.png">
 </div>
 <div class="team_details">
     <div class="stadium">
@@ -16,9 +16,9 @@
 </div>
 <div class="starting_lineup">
         <h1>Starting Lineup</h1>
-        {% for player in players %} 
+            {% for player in players %} 
         <li> {{player.name}} - {{player.position}}</li>
-        {% endfor %} 
+            {% endfor %} 
         <p>
             <a href="/players/team/{{team.id}}">View Full Roster</a>
         </p>

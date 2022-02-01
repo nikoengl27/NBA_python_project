@@ -2,11 +2,14 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-
+<div class="team_players">
+    <h1>Full Roster</h1>
 {% for player in players %}
-    <div class="team_players">
+    <div class="team_list">
         {{player.name}} {{player.position}}
-    </div>
+    </div>    
 {% endfor %}
+</div>
+
 
 {% endblock %}
